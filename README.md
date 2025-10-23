@@ -1,115 +1,63 @@
-# ADK Agent Suite — Codelabs + Hackathon App
+# ADK Agent Suite — Codelabs & Example Apps
 
-A compact repo implementing:
+Lightweight collection of ADK agent examples, codelabs, and small apps used for demonstrations and hackathon projects. Each app is self-contained under `agentic-apps/` and includes a short README describing purpose and how to run it.
 
-* **A1**: *From Prototypes to Agents with ADK*
-* **A2**: *ADK Agents with Tools*
-* **A3**: *Travel Agent using MCP (DB) + ADK*
-* **B**: One **hackathon** agent app from `awesome-adk-agents`
+Highlights
+- Focused examples that showcase ADK patterns: agent loops, tools, MCP integration, and domain examples (hotel, personal assistant, renovation).
+- Minimal runnable code—each app folder contains startup instructions.
+- Secrets and environment variables are intentionally local (`.env`) and are gitignored.
 
-Each has runnable code (Colab and/or desktop app) and a short YouTube walkthrough.
+Repository layout (important parts)
 
----
+  agentic-apps/
+    hotel-agent-app/         # Hotel/travel agent example — see its README
+    personal_assistant/      # Personal assistant example — see its README
+    renovation-agent/        # Renovation/planning agent example — see its README
 
-## Structure
 
-```
-notebooks/
-  a1_prototypes_to_agents.ipynb
-  a2_adk_tools.ipynb
-  a3_travel_agent_mcp_db.ipynb
-  b_hackathon_<project>.ipynb   # optional
 
-apps/
-  a1_prototypes_to_agents/
-  a2_adk_tools/
-  a3_travel_agent/
-  b_hackathon_<project>/
+Quick start (local)
 
-adk/agents/   adk/tools/   mcp/{servers,configs}/   data/   scripts/
-env.example   requirements.txt
-```
-
----
-
-## Quick Start
-
-### Run in Colab (zero setup)
-
-Open a notebook under `notebooks/` and run the **Setup** cell, then the **Demo** cell:
-
-* A1 → `a1_prototypes_to_agents.ipynb`
-* A2 → `a2_adk_tools.ipynb`
-* A3 → `a3_travel_agent_mcp_db.ipynb`
-* B  → `b_hackathon_<project>.ipynb` (if provided)
-
-### Run locally (desktop app)
+1. Create and activate a Python virtualenv
 
 ```bash
-git clone <repo-url> && cd <repo>
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -U pip && pip install -r requirements.txt
-cp env.example .env                                  # add API keys as needed
-# Pick an app to run:
-streamlit run apps/a3_travel_agent/App.py
-# or
-uvicorn apps/a2_adk_tools.main:app --reload --port 8000
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -U pip
+pip install -r requirements.txt
+```
+
+2. Add local secrets
+
+```bash
+# copy or create a .env in the app folder you plan to run
+cp env.example .env
+# or create agentic-apps/<app>/.env with required keys
+```
+
+3. Choose an example and follow its README
+
+- agentic-apps/hotel-agent-app/README.md
+- agentic-apps/personal_assistant/README.md
+- agentic-apps/renovation-agent/README.md
+
+Security and git
+- The repository `.gitignore` intentionally excludes `.env` files and Python caches (`__pycache__`, `*.pyc`) so local secrets are not committed. Never add API keys to commits or PR descriptions.
+
+How to contribute
+- Add a short README for any new app or notebook explaining purpose, required env vars, and quick run steps.
+- Keep secrets out of the repo. Add tests or small examples demonstrating expected usage when adding new agents.
+
+Contact / attribution
+- Built by the ADK examples collection. See individual READMEs for credits and references.
+
+
+agentic-apps/
+  hotel-agent-app/          # Hotel agent example (see agentic-apps/hotel-agent-app/README.md)
+  personal_assistant/       # Personal assistant example (see agentic-apps/personal_assistant/README.md)
+  renovation-agent/         # Renovation agent example (see agentic-apps/renovation-agent/README.md)
 ```
 
 ---
 
-## Environment
 
-Copy `env.example` → `.env` and fill what you need:
-
-```
-OPENAI_API_KEY=
-ANTHROPIC_API_KEY=
-GOOGLE_API_KEY=
-TAVILY_API_KEY=
-GOOGLE_MAPS_API_KEY=
-SQLITE_PATH=./data/travel.sqlite
-MCP_CONFIG=./mcp/configs/client.json
-```
-
----
-
-## What Each Part Shows
-
-* **A1 – Prototypes → Agents:** ADK agent loop, memory/scratchpad, simple planning.
-
-  * Colab: `notebooks/a1_prototypes_to_agents.ipynb`
-* **A2 – Tools with ADK:** Tool schemas, routing/policies, logs.
-
-  * Colab: `notebooks/a2_adk_tools.ipynb`
-* **A3 – Travel Agent (MCP + DB):** MCP SQLite, itinerary planning, web/maps lookups.
-
-  * Seed DB: `python scripts/seed_travel_db.py`
-  * Colab: `notebooks/a3_travel_agent_mcp_db.ipynb`
-  * App: `apps/a3_travel_agent/`
-* **B – Hackathon App:** One project from the list, packaged as an app.
-
-  * App: `apps/b_hackathon_<project>/`
-
----
-
-## Videos (add links)
-
-* A1 Walkthrough: `<YouTube A1>`
-* A2 Walkthrough: `<YouTube A2>`
-* A3 Walkthrough: `<YouTube A3>`
-* B App Walkthrough: `<YouTube B>`
-
----
-
-## Notes
-
-* Python 3.10+ recommended.
-* Do **not** commit real keys; use `.env`.
-* If MCP won’t connect, verify `MCP_CONFIG` and that your SQLite file exists.
-
----
-
-## License
-
-MIT (see `LICENSE`).
