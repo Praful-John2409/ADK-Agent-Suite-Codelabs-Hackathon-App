@@ -12,5 +12,12 @@ Run / Usage:
 2. Install dependencies: `pip install -r requirements.txt` (if present).
 3. Provide API keys in `.env` and run `agent.py` as instructed in the file.
 
+Demo
+----
+
+Watch a short demo of this agent here:
+
+https://youtu.be/Mf2-9nRjgsc
+
 Notes:
 - This README provides a short overview; consult `agent.py` for implementation details.

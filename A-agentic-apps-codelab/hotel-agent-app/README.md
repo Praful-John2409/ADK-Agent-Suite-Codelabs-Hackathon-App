@@ -13,6 +13,13 @@ Run / Usage:
 2. Copy `.env.example` or create a `.env` file with required API keys.
 3. Run the agent module or follow the instructions in `agent.py`.
 
+Demo
+----
+
+Watch a short demo of this app here:
+
+https://youtu.be/d934YyvejKw
+
 Notes:
 - This README is a short overview. See `agent.py` for implementation details.
 - Sensitive values must remain in `.env` (which is gitignored).

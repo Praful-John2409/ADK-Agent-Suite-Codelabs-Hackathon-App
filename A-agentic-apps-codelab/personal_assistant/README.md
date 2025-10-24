@@ -14,5 +14,12 @@ Run / Usage:
 2. Add your API keys to `.env`.
 3. Inspect `agent.py` to see how the assistant is started and configured.
 
+Demo
+----
+
+Watch a short demo of this agent here:
+
+https://youtu.be/FTIL9peodW0
+
 Notes:
 - Keep secrets out of source control; `.env` is ignored by the repository-level `.gitignore`.
