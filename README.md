@@ -65,8 +65,5 @@ agentic-apps/
   hotel-agent-app/          # Hotel agent example (see agentic-apps/hotel-agent-app/README.md)
   personal_assistant/       # Personal assistant example (see agentic-apps/personal_assistant/README.md)
   renovation-agent/         # Renovation agent example (see agentic-apps/renovation-agent/README.md)
-```
-
----
 
 
