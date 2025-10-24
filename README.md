@@ -49,6 +49,7 @@ Short demo videos for the three example agents:
 - Hotel Agent demo: https://youtu.be/d934YyvejKw
 - Personal Assistant demo: https://youtu.be/FTIL9peodW0
 - Renovation Agent demo: https://youtu.be/Mf2-9nRjgsc
+ - Project Manager demo: https://youtu.be/5QLqzovBjuU
 
 Security and git
 - The repository `.gitignore` intentionally excludes `.env` files and Python caches (`__pycache__`, `*.pyc`) so local secrets are not committed. Never add API keys to commits or PR descriptions.

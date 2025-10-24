@@ -52,6 +52,14 @@ GOOGLE_API_KEY=your_api_key_here
 python main.py
 ```
 
+Demo
+----
+
+Watch a short demo of this Project Manager agent here:
+
+https://youtu.be/5QLqzovBjuU
+
+
 ### 4. (Optional) API Server Configuration
 
 ```bash
